@@ -49,9 +49,14 @@
 				$('[data-toggle="tooltip"]').tooltip();
 			});
 
-            // TODO
             // Coder ici la fonction appelée lors de la recherche d'un produit
             function onSearchClick(searchString) {
+                if (searchString.trim() !== '') {
+                    // twig va créer l'url de base côté serveur
+                    var urlRecherche = "{{ path('app_boutique_chercher', {'_locale': app.request.attributes.get('_locale'), 'recherche': ''}) }}";
+                    // on encode les caracteres speciaux et on redirige vers la bonne url (url de base.recherche encodée)
+                    window.location.href = urlRecherche + '/' + encodeURIComponent(searchString);
+                }
             }
 		</script>
 		<!-- debut du block js spécifique -->

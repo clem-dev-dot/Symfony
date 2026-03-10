@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Recherche : {{ recherche }}{% endblock %}
+
+{% block body %}
+    <h2>Résultats pour "{{ recherche }}"</h2>
+
+    {% if produits is empty %}
+        <p>Aucun produit trouvé.</p>
+    {% else %}
+        <div class="row">
+            {% for produit in produits %}
+                <div class="col-md-3">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ produit.libelle }}</h5>
+                            <p class="card-text">{{ produit.texte }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endblock %}

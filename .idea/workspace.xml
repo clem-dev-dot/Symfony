@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8d5932f6-9833-4166-b199-6c114efeeead" name="Changes" comment="tp2 traduction" />
+    <list default="true" id="8d5932f6-9833-4166-b199-6c114efeeead" name="Changes" comment="tp2 traduction finie">
+      <change afterPath="$PROJECT_DIR$/templates/boutique/chercher.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/BoutiqueController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BoutiqueController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/navbar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/navbar.html.twig" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -234,7 +241,7 @@
       <workItem from="1772484368497" duration="658000" />
       <workItem from="1772485113985" duration="5338000" />
       <workItem from="1772538592132" duration="9046000" />
-      <workItem from="1773001988364" duration="615000" />
+      <workItem from="1773001988364" duration="10627000" />
     </task>
     <task id="LOCAL-00001" summary="tp1 avancé">
       <option name="closed" value="true" />
@@ -252,7 +259,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772547897594</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="tp2 traduction finie">
+      <option name="closed" value="true" />
+      <created>1773002792585</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1773002792585</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -272,7 +287,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="tp1 avancé" />
     <MESSAGE value="tp2 traduction" />
-    <option name="LAST_COMMIT_MESSAGE" value="tp2 traduction" />
+    <MESSAGE value="tp2 traduction finie" />
+    <option name="LAST_COMMIT_MESSAGE" value="tp2 traduction finie" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
