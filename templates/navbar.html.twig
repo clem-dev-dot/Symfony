@@ -21,6 +21,14 @@
 					Contact
 				</a>
 			</li>
+
+			<li class="nav-item">
+				<a href="{{ path('app_panier_index', {'_locale': app.request.attributes.get('_locale')}) }}" class="btn btn-outline-primary">
+    				<i class="fas fa-shopping-cart"></i> Panier
+    				({{ render(controller('App\\Controller\\PanierController::nombreProduits')) }})
+				</a>
+			</li>
+			
             {% set locale = app.request.attributes.get('_locale') %}
             {% set route = app.request.attributes.get('_route') %}
             {% set params = app.request.attributes.get('_route_params') %}

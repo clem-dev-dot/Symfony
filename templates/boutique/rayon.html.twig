@@ -22,6 +22,9 @@
                     <h4>{{ item.libelle }}</h4>
                     <p>{{ item.texte }}</p>
                     <p>Prix : {{ item.prix }} €</p>
+                    <a href="{{ path('app_panier_ajouter', {'_locale': app.request.attributes.get('_locale'),'idProduit': item.id}) }}" class="btn btn-primary">
+                        Ajouter au panier
+                    </a>
                 </div>
             {% endfor %}
         </div>
