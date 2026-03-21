@@ -9,13 +9,25 @@
     </style>
 
     <div class="example-wrapper">
-        <h1>Hello {{ controller_name }}! ✅</h1>
+        <h1>Rayon {{ categorie.libelle }} {{ produits|length }} produit(s) disponible(s)</h1>
+        <a class="contact_btnabck" href="/boutique" >
+            <i class="fas fa-2x fa-arrow-circle-left">
+            </i>
+        </a>
 
-        {% for item in produits %}
-            <li>
-                <p>{{ item.libelle }}</p>
-            </li>
-        {% endfor %}
+        <div class="produits">
+            {% for item in produits %}
+                <div class="produit">
+                    <img src="{{ asset(item.visuel) }}" width="100">
+                    <h4>{{ item.libelle }}</h4>
+                    <p>{{ item.texte }}</p>
+                    <p>Prix : {{ item.prix }} €</p>
+                    <a href="{{ path('app_panier_ajouter', {'_locale': app.request.attributes.get('_locale'),'idProduit': item.id}) }}" class="btn btn-primary">
+                        Ajouter au panier
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
 
 
     </div>

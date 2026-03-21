@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Nos rayons{% endblock %}
+{% block title %}Hello BoutiqueController!{% endblock %}
 
 {% block body %}
 <style>
@@ -9,12 +9,19 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <a class="contact_btnabck" href="/" >
+        <i class="fas fa-2x fa-arrow-circle-left">
+        </i>
+    </a>
+    <h1>Boutique {{ categories|length }} rayon(s) proposé(s)</h1>
 
-    {% for item in categories %}
-        <li>
-            <p>{{ item.libelle }}</p>
-        </li>
+    {% for category in categories %}
+        <div class="card">
+            <img src="{{ asset(category.visuel) }}" alt="{{ category.libelle }}">
+            <h3>{{ category.libelle }}</h3>
+            <p>{{ category.texte }}</p>
+            <a href="{{ path('app_boutique_rayon', {'idCategorie': category.id}) }}">Voir le rayon</a>
+        </div>
     {% endfor %}
 
 

@@ -10,17 +10,51 @@
 	<div class="collapse navbar-collapse" id="navbarsExampleDefault">
 		<ul class="navbar-nav mr-auto">
 			<li class="nav-item">
-				<a class="nav-link" href="{{ path("app_boutique_index") }}">
+				<a class="nav-link" href="{{ path('app_boutique_index')}}">
 					<i class="fas fa-store"></i>
 					Boutique
 				</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="{{ path("app_default_contact") }}">
+				<a class="nav-link" href="{{ path('app_default_contact')}}">
 					<i class="fas fa-comments"></i>
 					Contact
 				</a>
 			</li>
+
+			<li class="nav-item">
+				<a href="{{ path('app_panier_index', {'_locale': app.request.attributes.get('_locale')}) }}" class="btn btn-outline-primary">
+    				<i class="fas fa-shopping-cart"></i> Panier
+    				({{ render(controller('App\\Controller\\PanierController::nombreProduits')) }})
+				</a>
+			</li>
+			
+            {% set locale = app.request.attributes.get('_locale') %}
+            {% set route = app.request.attributes.get('_route') %}
+            {% set params = app.request.attributes.get('_route_params') %}
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"> {{ locale }} </a>
+                <ul class="dropdown-menu">
+                    {% for ilocale in supported_locales | split('|') %}
+                        {% if ilocale != locale %}
+                            {% set params = params | merge({'_locale': ilocale }) %}
+                            <li>
+                                <a class="dropdown-item" href="{{ path(route, params) }}"> {{ ilocale }} </a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </li>
+            {% set localeActuelle = app.request.attributes.get('_locale') %}
+            {% set urlRecherche = path('app_boutique_chercher', {'_locale': localeActuelle, 'recherche': ''}) %}
+
+            <div class="form-inline">
+                <input id="searchInput" class="form-control mr-2" type="search" placeholder="Rechercher...">
+                <button class="btn btn-outline-success" onclick="onSearchClick(document.getElementById('searchInput').value)">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
 			{# TODO : ajouter au fil des TPs les autres éléments du menu #}
 		</ul>
 		<!-- Début champ de recherche -->
@@ -30,7 +64,7 @@
 		{# TODO #}
 		<!-- Fin menu des monnaies -->
 		<!-- Début menu des langues -->
-		{# TODO #}
+        {# TODO #}
 		<!-- Fin Menu des langues -->
 	</div>
 </nav>

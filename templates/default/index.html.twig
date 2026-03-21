@@ -9,7 +9,7 @@
 		<div class="card-header">
 			<h3>
 				<i class="fas fa-home"></i>
-				 Boutique R4.01 -
+                {% trans %} default.index.message_intro {% endtrans %} R4.01 -
                 <span class="text-primary">
                     {# on insere la dateActuelle en la faisant passer par 2 filtres successifs #}
                     {{ dateActuelle | format_datetime(locale='fr',pattern="EEEE dd MMMM YYYY - HH:mm") | capitalize }}
@@ -17,10 +17,10 @@
 			</h3>
 		</div>
 		<div class="card-body">
-			<div class="card clickable" onclick="location = '{# TODO - Utiliser ici le helper 'path' #}'">
+			<div class="card clickable" onclick="location = '{{ path('app_boutique_index') }}' ">
 
                 {# Pour fabriquer l'URL d'une ressource du répertoire public, on utilise le helper 'asset' #}
-				<img src="{{ asset("images/epicerie.jpg") }}" class="card-img-top" alt="Logo Boutique"/>
+				<img src="{{ asset('images/epicerie.jpg') }}" class="card-img-top" alt="Logo Boutique"/>
 
 				<div class="card-body">
 					<p class="card-text">
